@@ -5,3 +5,14 @@
 	<stdio.h>
 	<stdlib.h>
 
+1587172111 source:c:\users\quiroz\desktop\calculadora\tp_laboratorio_1\tp_1\calculo.c
+	"calculo.h"
+
+1587171250 c:\users\quiroz\desktop\calculadora\tp_laboratorio_1\tp_1\calculo.h
+	<stdio.h>
+
+1587172153 source:c:\users\quiroz\desktop\calculadora\tp_laboratorio_1\tp_1\main.c
+	<stdlib.h>
+	"calculo.h"
+	<windows.h>
+
