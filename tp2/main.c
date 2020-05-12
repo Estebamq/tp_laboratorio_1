@@ -16,6 +16,7 @@ int main()
     int retorno;
     int respBaja;
     int idModifica;
+    int ordenExito;
 
     do
     {
@@ -58,7 +59,9 @@ int main()
             {
                 printf("La BAJA se realizo con Exito!!\n");
 
-            }else{
+            }
+            else
+            {
                 printf("ERROR: Id invalido o id dado de baja\n");
             }
             system("pause");
@@ -73,6 +76,22 @@ int main()
 
 
         case 5:
+            printf("****Ordenando empleado*****\n");
+            ordenExito=sortEmployees(emple,TAM);
+            if(ordenExito==0)
+            {
+                printf("****Ordenado con Exito*****");
+
+            }
+            else
+            {
+
+                printf("****Error al Ordenar*****");
+            }
+            system("pause");
+            break;
+
+        case 6:
             system("cls");
             printf("\nDesea salir s/n?: ");
             fflush(stdin);

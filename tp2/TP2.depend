@@ -31,18 +31,18 @@
 	<stdlib.h>
 	"ArrayEmployee.h"
 
-1589242740 source:c:\users\familia quiroz\desktop\tp2\arrayemployee.c
+1589249792 source:c:\users\familia quiroz\desktop\tp2\arrayemployee.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"ArrayEmployee.h"
 
-1588912981 c:\users\familia quiroz\desktop\tp2\arrayemployee.h
+1589248414 c:\users\familia quiroz\desktop\tp2\arrayemployee.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1588912981 source:c:\users\familia quiroz\desktop\tp2\main.c
+1589249521 source:c:\users\familia quiroz\desktop\tp2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"ArrayEmployee.h"

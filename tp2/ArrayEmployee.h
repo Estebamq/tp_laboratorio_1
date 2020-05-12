@@ -23,8 +23,6 @@ int printEmployee(eEmployee emple);
 int removeEmployee(eEmployee empl[],int, int id);
 int modifyEmployee(eEmployee empl[],int, int id);
 void harcodeStruct(eEmployee empleado[],int tam );
-//int findEmployeeById(Employee empl[] ,int, int id);
-//int employeePrintOne(Employee empl[], int);
-//int sortEmployees(Employee empl[],int);
-
+int findEmployeeById(eEmployee emple[],int tam,int id);
+int sortEmployees(eEmployee empl[],int tam);
 
