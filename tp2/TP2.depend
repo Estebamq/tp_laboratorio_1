@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1570343895 source:c:\users\quiroz\documents\facultad\tp2\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployee.h"
+
+1570342868 c:\users\quiroz\documents\facultad\tp2\tp2\arrayemployee.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1570343786 source:c:\users\quiroz\documents\facultad\tp2\tp2\arrayemployee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployee.h"
+
+1588867995 source:c:\users\familia quiroz\desktop\tp_laboratorio_1_2019\tp2\arrayemployee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployee.h"
+
+1588912981 c:\users\familia quiroz\desktop\tp_laboratorio_1_2019\tp2\arrayemployee.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1588912981 source:c:\users\familia quiroz\desktop\tp_laboratorio_1_2019\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployee.h"
+
+1589242740 source:c:\users\familia quiroz\desktop\tp2\arrayemployee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployee.h"
+
+1588912981 c:\users\familia quiroz\desktop\tp2\arrayemployee.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1588912981 source:c:\users\familia quiroz\desktop\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployee.h"
+
