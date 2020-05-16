@@ -27,4 +27,5 @@ void harcodeStruct(eEmployee empleado[],int tam );
 int findEmployeeById(eEmployee emple[],int tam,int id);
 int sortEmployees(eEmployee empl[],int tam);
 int emptyEmployees(eEmployee emple[],int tam);
+int printPromedEmployees(eEmployee emple[],int tam);
 

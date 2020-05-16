@@ -169,6 +169,7 @@ int printEmployees(eEmployee emple[],int tam)
     return retorno;
 
 }
+//******************************************************************************************************
 /** \brief Da de baja un empleado(baja logica)
  *
  * \param empl[] eEmployee
@@ -203,7 +204,7 @@ int removeEmployee(eEmployee empl[],int tam, int id)
     }
     return retorno;
 }
-
+//**************************************************************************************************
 /** \brief Modifica los datos del empleado, recibiendo el ID para modificarlo
  *
  * \param empl[] eEmployee
@@ -273,6 +274,7 @@ int modifyEmployee(eEmployee empl[],int tam, int id)
     return retorno;
 }
 
+//***********************************************************************************************
 /** \brief fuerza el ingreso de datos para testear el programa
  *
  * \param empleado[] eEmployee
@@ -302,6 +304,7 @@ void harcodeStruct(eEmployee empleado[],int tam )
 
 }
 
+//**********************************************************************************************
 /** \brief Ordena empleados por Apellido si encuentra uno igual lo ordena por sector
  *
  * \param empl[] eEmployee
@@ -361,6 +364,52 @@ int emptyEmployees(eEmployee emple[],int tam)
             retorno=printEmployee(emple[i]);
         }
     }
+    return retorno;
+
+}
+
+//*******************************************************************************************************
+
+/** \brief Muestra el total de los sueldos, el promedio de los mismos y la cantidad de empleados que superan ese promedio
+ *
+ * \param emple[] eEmployee
+ * \param tam int
+ * \return int retorna un entero 1 si logro hacer la operacion sino retorna un -1
+ *
+ */
+int printPromedEmployees(eEmployee emple[],int tam)
+{
+    int i;
+    int retorno =-1;
+    int contadorSalario=0;
+    float acumuladorSalario;
+    int cantEmpleados=0;
+    float promedio;
+
+    printf("TOTAL SALARIO \t   PROMEDIO SALARIO \t    CANTIDAD DE EMPLEADOS CON SALARIO MAYOR AL PROMEDIO\t\n");
+    for(i=0; i<tam; i++)
+    {
+        if(emple[i].isEmpty==OCUPADO)//muestra en pantalla los estados que esten ocupados
+        {
+
+            retorno=0;
+            acumuladorSalario+=emple[i].salary;
+            contadorSalario++;
+        }
+    }
+        if(contadorSalario!=0)
+        {
+            promedio = acumuladorSalario/contadorSalario;
+            for(i=0; i<tam; i++)
+            {
+                if(promedio<emple[i].salary && emple[i].isEmpty==OCUPADO)
+                {
+                    cantEmpleados++;
+                }
+            }
+            printf("%f \t %18.3f \t %18d\n",acumuladorSalario,promedio,cantEmpleados);
+        }
+
     return retorno;
 
 }

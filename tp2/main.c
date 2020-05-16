@@ -9,7 +9,7 @@ int main()
 {
     eEmployee emple[TAM];
     employeeInit(emple,TAM);
-    //harcodeStruct(emple,4);
+    harcodeStruct(emple,4);
     char seguir;
     char name[20];
     char lastName[20];
@@ -29,6 +29,7 @@ int main()
         switch(menu())
         {
 
+        //ALTA EMPLEADO
         case 1:
             system("cls");
             printf("\n\t***ALTA EMPLEADO***\n\n");
@@ -48,7 +49,7 @@ int main()
             }
             system("pause");
             break;
-
+        //MODIFICA EMPLEADO
         case 2:
             if(emptyEmployees(emple,TAM)!=-1)
             {
@@ -66,6 +67,7 @@ int main()
             }
             break;
 
+        //BAJA EMPLEADO
         case 3:
             if(emptyEmployees(emple,TAM)!=-1)
             {
@@ -92,6 +94,7 @@ int main()
             }
             break;
 
+        //MUESTRA EMPLEADO
         case 4:
           if(emptyEmployees(emple,TAM)!=-1)
             {
@@ -99,6 +102,7 @@ int main()
                 sortEmployees(emple,TAM);
                 printf("\t\t\t***Lista de Empleados***\n\n");
                 printEmployees(emple,TAM);
+                printPromedEmployees(emple,TAM);
                 system("pause");
             }
             else
