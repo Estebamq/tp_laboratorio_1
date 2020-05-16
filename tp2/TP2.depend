@@ -31,19 +31,32 @@
 	<stdlib.h>
 	"ArrayEmployee.h"
 
-1589249792 source:c:\users\familia quiroz\desktop\tp2\arrayemployee.c
+1589599651 source:c:\users\familia quiroz\desktop\tp2\arrayemployee.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"ArrayEmployee.h"
 
-1589248414 c:\users\familia quiroz\desktop\tp2\arrayemployee.h
+1589599651 c:\users\familia quiroz\desktop\tp2\arrayemployee.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validation.h"
+
+1589600416 source:c:\users\familia quiroz\desktop\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployee.h"
+
+1589598368 source:c:\users\familia quiroz\desktop\tp2\validation.c
+	"validation.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1589249521 source:c:\users\familia quiroz\desktop\tp2\main.c
+1589598246 c:\users\familia quiroz\desktop\tp2\validation.h
 	<stdio.h>
 	<stdlib.h>
-	"ArrayEmployee.h"
+	<string.h>
+	<time.h>
 

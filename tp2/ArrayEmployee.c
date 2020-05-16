@@ -3,16 +3,30 @@
 #include <string.h>
 #include "ArrayEmployee.h"
 
+
+/** \brief recibie un string con el menu y devuelve la opcion seleccionada
+ *
+ * \return int valor del menu
+ *
+ */
 int menu()
 {
     int opcion;;
     system("cls");
     printf("  *** ABM EMPLOYEE ***\n\n");
-    printf("1- Alta Empleado\n2- Modificacion Empleado\n3- Baja Empleado\n4- Informar sobre Empleados\n5-Ordenar por Apellido\n6- Salir\n\nIngrese opcion: ");
+    printf("1- Alta Empleado\n2- Modificacion Empleado\n3- Baja Empleado\n4- Informar sobre Empleados\n5- Salir\n\nIngrese opcion: ");
     scanf("%d", &opcion);
 
     return opcion;
 }
+//********************************************************************************************************
+/** \brief inicializa las etructuras para que esten libres
+ *
+ * \param recibe un array estructura
+ * \param int cantidad del array
+ * \return int retorna un entero para saber si se hizo o no la operacion
+ *
+ */
 int employeeInit(eEmployee emple[],int cant)
 {
     int i;
@@ -26,6 +40,15 @@ int employeeInit(eEmployee emple[],int cant)
 
     return retorno; //Devuelve -1 si no logra inicializar los estados o 0 cuando lo hace
 }
+//********************************************************************************************************
+/** \brief Busca un lugar libre y me devuelve el indice de ese lugar
+ *
+ * \param recibe un array estructura
+ * \param int cantidad del array
+ * \return int retorna un entero como el indice o -1 si no completa la operacion
+ *
+ *
+ */
 int isEmpty(eEmployee emple[],int tam)
 {
     int i;
@@ -41,7 +64,15 @@ int isEmpty(eEmployee emple[],int tam)
     }
     return indice;//Devuelve el lugar vacio o -1
 }
-
+//*********************************************************************************************************
+/** \brief Busca el empleado por id, recibe la estructura, el tamaño del array estructura y el id a buscar
+ *
+ * \param Recibe un array estructura
+ * \param int tamaño
+ * \param int Id
+ * \return int indice retorna el indice(lugar conde se guardo)
+ *
+ */
 int findEmployeeById(eEmployee emple[],int tam,int id)
 {
 
@@ -54,43 +85,53 @@ int findEmployeeById(eEmployee emple[],int tam,int id)
         if(emple[i].id==id)
         {
             indice=i;
+            break;
         }
     }
     return indice;//Devuelve el id o -1
 }
-
-int addEmployees(eEmployee emple[],int tam,int id)
+//********************************************************************************************************
+/** \brief Ingreso de empleado,ingresa el id, el nombre, apellido, salario y sector
+ *
+ * \param emple[] eEmployee
+ * \param tam int
+ * \param id int
+ * \param name[] char
+ * \param lastName[] char
+ * \param salary float
+ * \param sector int
+ * \return int retorna un entero si logra hacer la operacion
+ *
+ */
+int addEmployees(eEmployee emple[],int tam,int id, char name[],char lastName[],float salary,int sector)
 {
     int indice;
-
 
     indice=isEmpty(emple,tam);
 
     if(indice!=-1) //ingresa si encuentra lugar vacio
     {
 
-        system("cls");
-        printf("\n\t***ALTA EMPLEADO***\n\n");
-        printf("ingrese el Nombre: ");
-        fflush(stdin);
-        gets(emple[indice].name);
-        printf("Ingrese el Apellido: ");
-        fflush(stdin);
-        gets(emple[indice].lastName);
-        printf("Ingrese el Salario: ");
-        scanf("%f",&emple[indice].salary);
-        printf("ingrese el sector:\n1.RR.HH.\n2.Produccion\n3.Deposito\n4.Administracion\n\n Elija una opcion: ");
-        scanf("%d",&emple[indice].sector);
+        strcpy(emple[indice].name,name);
+        strcpy(emple[indice].lastName,lastName);
+        emple[indice].id=id;
+        emple[indice].salary=salary;
+        emple[indice].sector=sector;
         emple[indice].isEmpty=OCUPADO;
         emple[indice].id= id;
-        system("pause");
 
     }
 
 
     return indice;
 }
-
+//********************************************************************************************************
+/** \brief Muestra un empleado
+ *
+ * \param emple eEmployee
+ * \return int retorna un entero si pudo mostrarlo
+ *
+ */
 int printEmployee(eEmployee emple)
 {
 
@@ -103,8 +144,15 @@ int printEmployee(eEmployee emple)
 
 }
 
+//*******************************************************************************************************
 
-
+/** \brief Muestra todos los empleados ingresados
+ *
+ * \param emple[] eEmployee
+ * \param tam int
+ * \return int retorna un entero 1 si logro hacer la operacion sino retorna un -1
+ *
+ */
 int printEmployees(eEmployee emple[],int tam)
 {
     int i;
@@ -121,19 +169,27 @@ int printEmployees(eEmployee emple[],int tam)
     return retorno;
 
 }
+/** \brief Da de baja un empleado(baja logica)
+ *
+ * \param empl[] eEmployee
+ * \param tam int
+ * \param id int
+ * \return int retorna un 1 si logra hacer la operacion, sino retorna -1
+ *
+ */
 int removeEmployee(eEmployee empl[],int tam, int id)
 {
     int i;
     int retorno=-1;
     char respuesta;
-    int rest;
+
 
     for(i=0; i<tam; i++)
     {
         if(empl[i].id==id && empl[i].isEmpty==OCUPADO)
         {
             printf("****Empleado que se dara de baja*****\n");
-            rest=printEmployee(empl[i]);
+            printEmployee(empl[i]);
             printf("Dar de baja?s/n ");
             fflush(stdin);
             scanf("%c",&respuesta);
@@ -148,6 +204,14 @@ int removeEmployee(eEmployee empl[],int tam, int id)
     return retorno;
 }
 
+/** \brief Modifica los datos del empleado, recibiendo el ID para modificarlo
+ *
+ * \param empl[] eEmployee
+ * \param tam int
+ * \param id int
+ * \return int retornac 1 si logro hacer hacer la operacion o -1 si no lo hizo
+ *
+ */
 int modifyEmployee(eEmployee empl[],int tam, int id)
 {
     int i;
@@ -155,15 +219,15 @@ int modifyEmployee(eEmployee empl[],int tam, int id)
     int respuestaModificar;
     char respuesta;
     char seguir;
-
+    int indice=findEmployeeById(empl,tam,id);
     for(i=0; i<tam; i++)
     {
-        if( findEmployeeById(empl,tam,id) && empl[i].isEmpty==OCUPADO)
+        if( indice!=-1 && empl[i].isEmpty==OCUPADO)
         {
             system("cls");
             printf("*****Empleado que se modificara******\n");
             printf("\t ID \t NOMBRE \t APELLIDO \t SALARIO \t SECTOR\t\n");
-            printEmployee(empl[i]);
+            printEmployee(empl[indice]);
             printf("Desea Modificar el empleado?s/n ");
             fflush(stdin);
             scanf("%c",&respuesta);
@@ -174,29 +238,22 @@ int modifyEmployee(eEmployee empl[],int tam, int id)
                 {
                     printf("*****Empleado que se modificara******\n");
                     printf("\t ID \t NOMBRE \t APELLIDO \t SALARIO \t SECTOR\t\n");
-                    printEmployee(empl[i]);
+                    printEmployee(empl[indice]);
                     printf("Que desea modificar?\n1-Nombre\n2-Apellido\n3-Salario\n4-Sector\n Respuesta: ");
                     scanf("%d",&respuestaModificar);
                     switch(respuestaModificar)
                     {
                     case 1:
-                        printf("Ingrese nuevo nombre: ");
-                        fflush(stdin);
-                        gets(empl[i].name);
-
+                        getName("ingrese el nuevo Nombre: ","Error \n",2,20,4,empl[indice].name);
                         break;
                     case 2:
-                        printf("Ingrese nuevo Apellido: ");
-                        fflush(stdin);
-                        gets(empl[i].lastName);
+                        getName("Ingrese el nuevo Apellido: ","Error \n",4,20,4,empl[indice].lastName);
                         break;
                     case 3:
-                        printf("Ingrese nuevo Salario: ");
-                        scanf("%f",&empl[i].salary);
+                        getFloat("Ingrese nuevo el Salario: ","Error \n",4,6,4,&empl[indice].salary);
                         break;
                     case 4:
-                        printf("Ingrese nuevo Sector: ");
-                        scanf("%d",&empl[i].sector);
+                        getUnsignedInt("ingrese el nuevo sector: ","Error \n",1,4,4,&empl[i].sector);
                         break;
                     default:
                         printf("Error: Numero no Valido");
@@ -216,16 +273,23 @@ int modifyEmployee(eEmployee empl[],int tam, int id)
     return retorno;
 }
 
+/** \brief fuerza el ingreso de datos para testear el programa
+ *
+ * \param empleado[] eEmployee
+ * \param tam int
+ * \return void no retorna nada
+ *
+ */
 void harcodeStruct(eEmployee empleado[],int tam )
 {
-    int  id[4]= {1,2,3,4};
-    char nombres[4][10]= {"Mati","Cristian","Marce","Hernan"};
-    char Apellido[4][10]= {"Quiroz","Ponce","Quiroz","Sanchez"};
-    float salario[4]= {200,300,444,777};
-    int sector[4]= {1,2,3,4};
+    int  id[]= {1,2,3,4};
+    char nombres[][10]= {"Mati","Cristian","Marce","Hernan"};
+    char Apellido[][10]= {"Quiroz","Ponce","Quiroz","Sanchez"};
+    float salario[]= {200,300,444,777};
+    int sector[]= {1,2,3,4};
     int estado=OCUPADO;
     int i;
-    for(i=0; i<4; i++)
+    for(i=0; i<tam; i++)
     {
         strcpy(empleado[i].name,nombres[i]);
         strcpy(empleado[i].lastName,Apellido[i]);
@@ -238,6 +302,13 @@ void harcodeStruct(eEmployee empleado[],int tam )
 
 }
 
+/** \brief Ordena empleados por Apellido si encuentra uno igual lo ordena por sector
+ *
+ * \param empl[] eEmployee
+ * \param tam int
+ * \return int un 1 si logra realizar la operacion o -1 si no lo logra
+ *
+ */
 int sortEmployees(eEmployee empl[],int tam)
 {
     int i;
@@ -269,3 +340,27 @@ int sortEmployees(eEmployee empl[],int tam)
     return retorno;
 }
 
+//*******************************************************************************************************
+
+/** \brief verifica si hay empleados ingresados
+ *
+ * \param emple[] eEmployee
+ * \param tam int
+ * \return int retorna un entero 1 si logro hacer la operacion sino retorna un -1
+ *
+ */
+int emptyEmployees(eEmployee emple[],int tam)
+{
+    int i;
+    int retorno =-1;
+    for(i=0; i<tam; i++)
+    {
+        if(emple[i].isEmpty==OCUPADO)//muestra en pantalla los estados que esten ocupados
+        {
+
+            retorno=printEmployee(emple[i]);
+        }
+    }
+    return retorno;
+
+}
