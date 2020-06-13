@@ -209,7 +209,7 @@
 	"LinkedList.h"
 	"Employee.h"
 
-1590720144 source:c:\users\familia quiroz\desktop\tp3\parser.c
+1592022382 source:c:\users\familia quiroz\desktop\tp3\parser.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -217,7 +217,8 @@
 
 1591882655 c:\users\familia quiroz\desktop\tp3\linkedlist.h
 
-1590766018 c:\users\familia quiroz\desktop\tp3\employee.h
+1592022885 c:\users\familia quiroz\desktop\tp3\employee.h
+	<limits.h>
 
 1591882359 source:c:\users\familia quiroz\desktop\tp3\controller.c
 	<stdio.h>
@@ -227,10 +228,19 @@
 	"Employee.h"
 	"parser.h"
 
-1561499216 c:\users\familia quiroz\desktop\tp3\parser.h
+1592022781 c:\users\familia quiroz\desktop\tp3\parser.h
 
-1591884677 source:c:\users\familia quiroz\desktop\tp3\employee.c
+1592022296 source:c:\users\familia quiroz\desktop\tp3\employee.c
 	<stdlib.h>
 	"Employee.h"
 	<string.h>
+
+1591918864 source:c:\users\familia quiroz\desktop\tp3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1561499216 c:\users\familia quiroz\desktop\tp3\controller.h
 

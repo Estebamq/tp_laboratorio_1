@@ -2,6 +2,7 @@
 #include "Employee.h"
 #include <string.h>
 
+
 Employee* employee_new()
 {
   Employee* employee;
@@ -12,7 +13,7 @@ Employee* employee_new()
 Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr,char* sueldoStr)
 {
     Employee* employee;
-    employee = (Employee*)calloc(sizeof(Employee),1);
+    employee = employee_new();
 
     employee->id=atoi(idStr);
     strcpy(employee->nombre,nombreStr);
@@ -20,6 +21,12 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
 
     return employee;
 
+}
+
+void employee_delete(Employee* This)
+{
+    if(This!=NULL)
+        free(This);
 }
 
 int employee_setNombre(Employee* This,char* nombre)
@@ -39,71 +46,149 @@ int employee_setNombre(Employee* This,char* nombre)
 
 int employee_getNombre(Employee* This,char* nombre)
 {
+    int retorno = 0;
 
-}
-
-
-
-int employee_setSueldo(Employee* this,int sueldo)
-{
-
-}
-int employee_getSueldo(Employee* this,int* sueldo)
-{
-
-
-}
-
-int employee_setId(Employee* this,int id)
-{
-
-}
-int employee_getId(Employee* this,int* id)
-{
-
-}
-
-int employee_setHorasTrabajadas(Employee* this,int horasTrabajadas)
-{
-
-}
-int employee_getHorasTrabajadas(Employee* this,int* horasTrabajdas)
-{
-
-
-}
-
-
-int employee_CompareByName(Employee* e1, Employee* e2)
-{
-    //verificar nulidad
-
-    return strcmp(e1->nombre, e2->nombre);
-}
-
-int employee_CompareById(Employee* e1, Employee* e2)
-{
-    //verificar nulidad
-
-    if(e1->id > e2->id)
+    if(This!=NULL)
     {
-        return 1;
+        strcpy(nombre,This->nombre);
+        retorno=1;
     }
-    else
+
+    return retorno;
+
+}
+
+
+
+int employee_setSueldo(Employee* This,int sueldo)
+{
+    int retorno=0;
+
+    if(This!=NULL)
     {
-        if(e1->id < e2->id)
+        This->sueldo=sueldo;
+        retorno = 1;
+    }
+
+    return retorno;
+
+}
+int employee_getSueldo(Employee* This,int* sueldo)
+{
+    int retorno=0;
+
+    if(This!=NULL)
+    {
+        *sueldo = This->sueldo;
+        retorno = 1;
+    }
+
+    return retorno;
+
+}
+
+int employee_setId(Employee* This,int id)
+{
+    int retorno=0;
+
+    if(This!=NULL)
+    {
+        This->id=id;
+        retorno = 1;
+    }
+
+    return retorno;
+
+}
+int employee_getId(Employee* This,int* id)
+{
+    int retorno=0;
+
+    if(This!=NULL)
+    {
+        *id = This->id;
+        retorno = 1;
+    }
+
+    return retorno;
+
+}
+
+int employee_setHorasTrabajadas(Employee* This,int horasTrabajadas)
+{
+    int retorno=0;
+
+    if(This!=NULL)
+    {
+        This->horasTrabajadas=horasTrabajadas;
+        retorno = 1;
+    }
+
+    return retorno;
+
+}
+int employee_getHorasTrabajadas(Employee* This,int* horasTrabajdas)
+{
+    int retorno=0;
+
+    if(This!=NULL)
+    {
+        *horasTrabajdas = This->horasTrabajadas;
+        retorno = 1;
+    }
+
+    return retorno;
+
+
+}
+
+
+int employee_CompareByName(void* employeeI, void* employeeII)
+{
+     int retorno;
+     char auxNameI [60];
+     char auxNameII[60];
+
+    if((employeeI != NULL)&&(employeeII !=NULL))
+    {
+        employee_getNombre(employeeI, auxNameI);
+        employee_getNombre(employeeII, auxNameI);
+
+        retorno = strcmp(auxNameI, auxNameII);
+
+    }
+
+    return retorno;
+}
+
+int employee_CompareById(void* employeeI, void* employeeII)
+{
+
+    int retorno;
+
+    if((employeeI != NULL)&&(employeeII !=NULL))
+    {
+        int auxIdA, auxIdB;
+        employee_getId(employeeI,&auxIdA);
+        employee_getId(employeeI,&auxIdB);
+
+        if(auxIdA > auxIdB)
         {
-            return -1;
+            retorno = 1;
+        }
+        else if(auxIdA == auxIdB)
+        {
+            retorno = 0;
         }
         else
         {
-            return 0;
+            retorno = -1;
         }
+
+
+
     }
-
-
-
-    return strcmp(e1->nombre, e2->nombre);
+    return retorno;
 }
 
 
