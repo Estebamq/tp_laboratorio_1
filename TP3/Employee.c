@@ -18,7 +18,7 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
     employee->id=atoi(idStr);
     strcpy(employee->nombre,nombreStr);
     employee->horasTrabajadas = atoi(horasTrabajadasStr);
-
+    employee->sueldo = atoi(sueldoStr);
     return employee;
 
 }
@@ -170,7 +170,7 @@ int employee_CompareById(void* employeeI, void* employeeII)
     {
         int auxIdA, auxIdB;
         employee_getId(employeeI,&auxIdA);
-        employee_getId(employeeI,&auxIdB);
+        employee_getId(employeeII,&auxIdB);
 
         if(auxIdA > auxIdB)
         {
@@ -191,5 +191,64 @@ int employee_CompareById(void* employeeI, void* employeeII)
     return retorno;
 }
 
+int employee_CompareBySueldo(void* employeeI, void* employeeII)
+{
+
+    int retorno;
+
+    if((employeeI != NULL)&&(employeeII !=NULL))
+    {
+        int auxIdA, auxIdB;
+        employee_getSueldo(employeeI,&auxIdA);
+        employee_getSueldo(employeeII,&auxIdB);
+
+        if(auxIdA > auxIdB)
+        {
+            retorno = 1;
+        }
+        else if(auxIdA == auxIdB)
+        {
+            retorno = 0;
+        }
+        else
+        {
+            retorno = -1;
+        }
+
+
+
+    }
+    return retorno;
+}
+
+int employee_CompareByHsHombre(void* employeeI, void* employeeII)
+{
+
+    int retorno;
+
+    if((employeeI != NULL)&&(employeeII !=NULL))
+    {
+        int auxIdA, auxIdB;
+        employee_getHorasTrabajadas(employeeI,&auxIdA);
+        employee_getHorasTrabajadas(employeeI,&auxIdB);
+
+        if(auxIdA > auxIdB)
+        {
+            retorno = 1;
+        }
+        else if(auxIdA == auxIdB)
+        {
+            retorno = 0;
+        }
+        else
+        {
+            retorno = -1;
+        }
+
+
+
+    }
+    return retorno;
+}
 
 

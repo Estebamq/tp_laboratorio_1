@@ -1,6 +1,6 @@
 #ifndef employee_H_INCLUDED
 #define employee_H_INCLUDED
-#include <limits.h>
+
 typedef struct
 {
     int id;
@@ -117,5 +117,11 @@ int employee_CompareByName(void* employeeI, void* employeeII);
  *
  */
 int employee_CompareById(void* employeeI, void* employeeII);
+
+int employee_CompareBySueldo(void* employeeI, void* employeeII);
+
+int employee_CompareByHsHombre(void* employeeI, void* employeeII);
+
+
 
 #endif // employee_H_INCLUDED
