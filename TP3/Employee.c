@@ -152,7 +152,7 @@ int employee_CompareByName(void* employeeI, void* employeeII)
     if((employeeI != NULL)&&(employeeII !=NULL))
     {
         employee_getNombre(employeeI, auxNameI);
-        employee_getNombre(employeeII, auxNameI);
+        employee_getNombre(employeeII, auxNameII);
 
         retorno = strcmp(auxNameI, auxNameII);
 

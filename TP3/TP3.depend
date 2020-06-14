@@ -219,7 +219,7 @@
 
 1592094557 c:\users\familia quiroz\desktop\tp3\employee.h
 
-1592094915 source:c:\users\familia quiroz\desktop\tp3\controller.c
+1592096585 source:c:\users\familia quiroz\desktop\tp3\controller.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -230,7 +230,7 @@
 
 1592022781 c:\users\familia quiroz\desktop\tp3\parser.h
 
-1592095073 source:c:\users\familia quiroz\desktop\tp3\employee.c
+1592096362 source:c:\users\familia quiroz\desktop\tp3\employee.c
 	<stdlib.h>
 	"Employee.h"
 	<string.h>

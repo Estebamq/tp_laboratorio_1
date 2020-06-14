@@ -186,7 +186,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
                 break;
             }
         }
-        if( auxEmployee->id != auxId)
+        if( retorno==0)
         {
             printf("Ese Id no existe.\n");
         }
