@@ -1,6 +1,6 @@
 #ifndef employee_H_INCLUDED
 #define employee_H_INCLUDED
-
+#include "validation.h"
 typedef struct
 {
     int id;
@@ -9,13 +9,14 @@ typedef struct
     int sueldo;
 }Employee;
 
-/** \brief
+/** \brief Crea espacio para un nuevo empleado
  *
  * \return Employee*
  *
  */
 Employee* employee_new();
-/** \brief
+
+/** \brief crea el espacio para un empleado con parametros
  *
  * \param idStr char*
  * \param nombreStr char*
@@ -25,7 +26,8 @@ Employee* employee_new();
  *
  */
 Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr,char* sueldoStr);
-/** \brief
+
+/** \brief DA de baja un empleado
  *
  * \param This Employee*
  * \return void
@@ -33,7 +35,7 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
  */
 void employee_delete(Employee* This);
 
-/** \brief
+/** \brief Set ID empleado
  *
  * \param This Employee*
  * \param id int
@@ -41,7 +43,8 @@ void employee_delete(Employee* This);
  *
  */
 int employee_setId(Employee* This,int id);
-/** \brief
+
+/** \brief Get ID empleado
  *
  * \param This Employee*
  * \param id int*
@@ -50,7 +53,7 @@ int employee_setId(Employee* This,int id);
  */
 int employee_getId(Employee* This,int* id);
 
-/** \brief
+/** \brief Set NOMBRE empleado
  *
  * \param This Employee*
  * \param nombre char*
@@ -58,7 +61,8 @@ int employee_getId(Employee* This,int* id);
  *
  */
 int employee_setNombre(Employee* This,char* nombre);
-/** \brief
+
+/** \brief Get NOMBRE empleado
  *
  * \param This Employee*
  * \param nombre char*
@@ -67,7 +71,7 @@ int employee_setNombre(Employee* This,char* nombre);
  */
 int employee_getNombre(Employee* This,char* nombre);
 
-/** \brief
+/** \brief Set HORAS TRABAJADAS empleado
  *
  * \param This Employee*
  * \param horasTrabajadas int
@@ -75,7 +79,8 @@ int employee_getNombre(Employee* This,char* nombre);
  *
  */
 int employee_setHorasTrabajadas(Employee* This,int horasTrabajadas);
-/** \brief
+
+/** \brief Get HORAS TRABAJADAS empleado
  *
  * \param This Employee*
  * \param horasTrabajadas int*
@@ -84,7 +89,7 @@ int employee_setHorasTrabajadas(Employee* This,int horasTrabajadas);
  */
 int employee_getHorasTrabajadas(Employee* This,int* horasTrabajadas);
 
-/** \brief
+/** \brief Set SUELDO empleado
  *
  * \param This Employee*
  * \param sueldo int
@@ -92,7 +97,8 @@ int employee_getHorasTrabajadas(Employee* This,int* horasTrabajadas);
  *
  */
 int employee_setSueldo(Employee* This,int sueldo);
-/** \brief
+
+/** \brief Get SUELDO empleado
  *
  * \param This Employee*
  * \param sueldo int*
@@ -101,7 +107,7 @@ int employee_setSueldo(Employee* This,int sueldo);
  */
 int employee_getSueldo(Employee* This,int* sueldo);
 
-/** \brief
+/** \brief Compara por NOMBRE a los empleados
  *
  * \param employeeI void*
  * \param employeeII void*
@@ -109,7 +115,8 @@ int employee_getSueldo(Employee* This,int* sueldo);
  *
  */
 int employee_CompareByName(void* employeeI, void* employeeII);
-/** \brief
+
+/** \brief Compara por ID a los empleados
  *
  * \param employeeI void*
  * \param employeeII void*
@@ -118,8 +125,22 @@ int employee_CompareByName(void* employeeI, void* employeeII);
  */
 int employee_CompareById(void* employeeI, void* employeeII);
 
+/** \brief Compara por SUELDO a los empleados
+ *
+ * \param employeeI void*
+ * \param employeeII void*
+ * \return int
+ *
+ */
 int employee_CompareBySueldo(void* employeeI, void* employeeII);
 
+/** \brief Compara por HORAS DE TRABAJO a los empleados
+ *
+ * \param employeeI void*
+ * \param employeeII void*
+ * \return int
+ *
+ */
 int employee_CompareByHsHombre(void* employeeI, void* employeeII);
 
 

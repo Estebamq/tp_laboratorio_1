@@ -137,7 +137,8 @@ int main()
             system("pause");
             break;
         case 10:
-            getUnsignedInt("Esta a punto de salir,guardo los datos?\n1-Si\n 2-No/n","Error\n",1,3,4,&opcion);
+
+            validOpcion(&opcion);
             if(opcion==1)
                 {
                     ll_deleteLinkedList(listaEmpleados);

@@ -230,7 +230,7 @@ int employee_CompareByHsHombre(void* employeeI, void* employeeII)
     {
         int auxIdA, auxIdB;
         employee_getHorasTrabajadas(employeeI,&auxIdA);
-        employee_getHorasTrabajadas(employeeI,&auxIdB);
+        employee_getHorasTrabajadas(employeeII,&auxIdB);
 
         if(auxIdA > auxIdB)
         {

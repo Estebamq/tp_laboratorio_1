@@ -217,40 +217,40 @@
 
 1592023535 c:\users\familia quiroz\desktop\tp3\linkedlist.h
 
-1592094557 c:\users\familia quiroz\desktop\tp3\employee.h
+1592097886 c:\users\familia quiroz\desktop\tp3\employee.h
+	"validation.h"
 
-1592096585 source:c:\users\familia quiroz\desktop\tp3\controller.c
+1592097886 source:c:\users\familia quiroz\desktop\tp3\controller.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"LinkedList.h"
 	"Employee.h"
 	"parser.h"
-	"validation.h"
 
 1592022781 c:\users\familia quiroz\desktop\tp3\parser.h
 
-1592096362 source:c:\users\familia quiroz\desktop\tp3\employee.c
+1592097501 source:c:\users\familia quiroz\desktop\tp3\employee.c
 	<stdlib.h>
 	"Employee.h"
 	<string.h>
 
-1592094304 source:c:\users\familia quiroz\desktop\tp3\main.c
+1592097809 source:c:\users\familia quiroz\desktop\tp3\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Controller.h"
 	"Employee.h"
 
-1592093289 c:\users\familia quiroz\desktop\tp3\controller.h
+1592098393 c:\users\familia quiroz\desktop\tp3\controller.h
 
-1592092471 source:c:\users\familia quiroz\desktop\tp3\validation.c
+1592097809 source:c:\users\familia quiroz\desktop\tp3\validation.c
 	"validation.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1592092415 c:\users\familia quiroz\desktop\tp3\validation.h
+1592098635 c:\users\familia quiroz\desktop\tp3\validation.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
